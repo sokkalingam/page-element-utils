@@ -1,2 +1,3 @@
 # page-element-utils
-Sniff on page and highlight element with no ids or duplicate ids
+Scan page for desired elements ex: all inputs, buttons and links
+Check if all elements have id, if not then highlight in red, if duplicate id is found highligh in blue
