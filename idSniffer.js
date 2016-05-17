@@ -1,11 +1,15 @@
+/* Fetches elements on page
+ * Scans for ids within element or within parent
+ * Highlights elements with missing or duplicate ids
+ */
 function idSniffer() {
 	
 	var attr = "id"; // attribute to look for
-	var elements = $(":input, a, button"); 	// search in elements
+	var elements = $(":input, a, button"); 	// elements to look for
 
 	var ids    	 = []; 	// store ids to track duplicate ids
-	var missingCss   = {"border-style": "solid", "border-width": "5px", "border-color" : "red" }; // missing
-	var duplicateCss = {"border-style": "solid", "border-width": "5px", "border-color" : "blue"}; // duplicate
+	var missingCss   = {"border-style": "solid", "border-width": "5px", "border-color" : "red" }; // border in red
+	var duplicateCss = {"border-style": "solid", "border-width": "5px", "border-color" : "blue"}; // border in blue
 
     for (var i = 0; i < elements.length; i++) {
     	
@@ -35,6 +39,11 @@ function idSniffer() {
 
 }
 
+
+/*  This method runs on page load
+ *  Injects Jquery
+ *  Once Jquery is loaded, calls idSniffer
+ */
 (function() {
     var script = document.createElement("script");
     script.src = "http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js";
