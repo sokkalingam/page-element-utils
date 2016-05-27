@@ -1,5 +1,9 @@
-// Execute idSniffer on Double Click
-$(document).dblclick(idSniffer);
+// Execute idSniffer on Ctrl + Space
+$(document).keydown(function(e) {
+    var evtobj = window.event? event : e;
+    if (evtobj.ctrlKey && evtobj.keyCode == 32)
+        idSniffer();
+});
 
 /* Fetches elements on page
  * Scans for ids within element or within parent
