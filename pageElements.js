@@ -23,16 +23,16 @@
 
     // generate element definitions
     for (var i = 0; i < ids.length; i++)
-    	output += eleAttr + " { $(\"#" + eleAttr + "\") }\n";
+    	output += ids[i] + " { $(\"#" + ids[i] + "\") }\n";
     
     output += newLines;
     
     // generate filling input fields
     for (var i = 0; i < ids.length; i++)
-    	if (ids[i].toLowerCase().indexOf('select'))
+    	if (ids[i].toLowerCase().indexOf('select') > -1)
     		output += "select(" + ids[i] + ", model.get" + ucFirstChar(ids[i])+ "())\n";
     	else
-    	if (ids[i].toLowerCase().indexOf('date'))
+    	if (ids[i].toLowerCase().indexOf('date') > -1)
     		output += "type(" + ids[i] + ", AHPHelper.formatDate(model.get" + ucFirstChar(ids[i])+ "()))\n";
     	else
     		output += "type(" + ids[i] + ", model.get" + ucFirstChar(ids[i])+ "())\n";

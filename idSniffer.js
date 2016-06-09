@@ -14,7 +14,7 @@ function idSniffer() {
     console.log("Running id sniffer");
 	
 	var attr = "id"; // attribute to look for
-	var elements = $(":input, a, button, p"); 	// elements to look for
+	var elements = $(":input, a, button, p, toggle2, toggle3"); 	// elements to look for
 
 	var ids    	 = []; 	// store ids to track duplicate ids
 	var missingCss   = {"border-style": "solid", "border-width": "5px", "border-color" : "red" }; // border in red
